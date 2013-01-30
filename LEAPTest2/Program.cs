@@ -14,9 +14,13 @@ namespace LEAPTest2
             GestureListener listener = new GestureListener(1500);
             listener.onGesture += listener_onGesture;
             Controller controller = new Controller(listener);
+
             Console.ReadLine();
-            Console.WriteLine("finished?");
+            Console.WriteLine("finished?"); // just making sure
             Console.ReadLine();
+
+            controller.RemoveListener(listener);
+            controller.Dispose();
         }
 
         static void listener_onGesture(Gesture gesture)
